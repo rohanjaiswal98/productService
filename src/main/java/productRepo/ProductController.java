@@ -3,6 +3,9 @@ package productRepo;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import productRepo.exception.ProductNotFoundException;
+import productRepo.model.Product;
+import productRepo.repository.ProductRepository;
 
 import java.util.List;
 
@@ -29,7 +32,6 @@ class ProductController {
 
     @GetMapping("/products/{id}")
     Product one(@PathVariable Long id) {
-
         return repository.findById(id).orElseThrow(() -> new ProductNotFoundException(id));
     }
 

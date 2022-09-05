@@ -1,4 +1,4 @@
-package productRepo;
+package productRepo.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import java.util.Objects;
 
 @Entity
-class Product {
+public class Product {
 
     private @Id
     @GeneratedValue Long id;
